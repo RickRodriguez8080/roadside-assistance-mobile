@@ -4,7 +4,7 @@ import React from "react";
 export const ServiceCards = () => {
 	return (
 		<div className="card-deck">
-			<div className="card card-gas">
+			<div className="card card-gas bg-danger">
 				<a href="!#">
 					<img
 						className="card-img-top"
@@ -12,11 +12,11 @@ export const ServiceCards = () => {
 						alt="Gas Pump"
 					/>
 					<div className="card-body">
-						<h4 className="card-title">Gas</h4>
+						<h4 className="card-title text-white">Gas</h4>
 					</div>
 				</a>
 			</div>
-			<div className="card card-tire">
+			<div className="card card-tire bg-warning">
 				<a href="!#">
 					<img
 						className="card-img-top"
@@ -24,11 +24,11 @@ export const ServiceCards = () => {
 						alt="Gas Pump"
 					/>
 					<div className="card-body">
-						<h4 className="card-title">Flat Tire</h4>
+						<h4 className="card-title text-dark">Flat Tire</h4>
 					</div>
 				</a>
 			</div>
-			<div className="card card-battery">
+			<div className="card card-battery bg-secondary">
 				<a href="!#">
 					<img
 						className="card-img-top"
@@ -36,7 +36,7 @@ export const ServiceCards = () => {
 						alt="Gas Pump"
 					/>
 					<div className="card-body">
-						<h4 className="card-title">Battery</h4>
+						<h4 className="card-title text-white">Battery</h4>
 					</div>
 				</a>
 			</div>
