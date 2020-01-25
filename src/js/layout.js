@@ -8,6 +8,8 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
+import { SigninPage } from "./component/SigninPage";
+
 //import { Footer } from "./component/footer";
 
 //create your first component
@@ -23,7 +25,7 @@ export const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route path="/demo" component={AngelSignIn} />
+						<Route path="/angelSignIn" component={SigninPage} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
