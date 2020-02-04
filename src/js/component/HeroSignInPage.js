@@ -1,7 +1,8 @@
 import React from "react";
-import "../../styles/SigninPage.css";
+import "../../styles/HeroSignInPage.css";
+import { Link } from "react-router-dom";
 
-export const SigninPage = () => {
+export const HeroSignIn = () => {
 	return (
 		<div>
 			<div className="login-form">
@@ -40,7 +41,9 @@ export const SigninPage = () => {
 				</form>
 				<p>
 					Dont have an account!
-					<a href="#">Sign up here</a>.
+					<Link to="/herosignup">
+						<a href="#">Sign up here</a>.
+					</Link>
 				</p>
 			</div>
 		</div>
