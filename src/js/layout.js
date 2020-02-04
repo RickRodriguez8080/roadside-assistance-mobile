@@ -10,6 +10,8 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { HeroSignIn } from "./component/HeroSignInPage";
 import { HeroSignUp } from "./component/HeroSignUpPage";
+import { UserSignIn } from "./component/UserSignInPage";
+import { UserSignUp } from "./component/UserSignUpPage";
 
 //import { Footer } from "./component/footer";
 
@@ -28,6 +30,8 @@ export const Layout = () => {
 						<Route exact path="/" component={Home} />
 						<Route path="/herosignin" component={HeroSignIn} />
 						<Route path="/herosignup" component={HeroSignUp} />
+						<Route path="/usersignin" component={UserSignIn} />
+						<Route path="/usersignup" component={UserSignUp} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
