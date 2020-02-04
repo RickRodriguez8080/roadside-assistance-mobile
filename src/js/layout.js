@@ -8,7 +8,8 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import { SigninPage } from "./component/SigninPage";
+import { HeroSignIn } from "./component/HeroSignInPage";
+import { HeroSignUp } from "./component/HeroSignUpPage";
 
 //import { Footer } from "./component/footer";
 
@@ -25,7 +26,8 @@ export const Layout = () => {
 					<Navbar />
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route path="/angelSignIn" component={SigninPage} />
+						<Route path="/herosignin" component={HeroSignIn} />
+						<Route path="/herosignup" component={HeroSignUp} />
 						<Route path="/single/:theid" component={Single} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
