@@ -53,9 +53,7 @@ export const HeroSignIn = () => {
 				</form>
 				<p>
 					Dont have an account!
-					<Link to="/herosignup">
-						<a href="#">Sign up here</a>.
-					</Link>
+					<Link to="/herosignup">Sign up here.</Link>
 				</p>
 			</div>
 		</div>

@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 export const UserSignUp = () => {
+	const [first_name, setFirstName] = useState("");
+	const [last_name, setLastName] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [phone, setPhone] = useState("");
+	const [share_phone, setSharePhone] = useState();
+
+	// allows you to access store and action from flux.js
+	const { store, actions } = useContext(Context);
+
 	return (
 		<div className="my-form">
 			<div className="cotainer">
@@ -18,10 +30,11 @@ export const UserSignUp = () => {
 										</label>
 										<div className="col-md-6">
 											<input
+												onChange={e => setFirstName(e.target.value)}
 												type="text"
-												id="first_name"
+												value={first_name}
 												className="form-control"
-												name="first_name"
+												placeholder="Enter First Name"
 											/>
 										</div>
 									</div>
@@ -31,10 +44,10 @@ export const UserSignUp = () => {
 										</label>
 										<div className="col-md-6">
 											<input
+												onChange={e => setLastName(e.target.value)}
 												type="text"
-												id="last_name"
 												className="form-control"
-												name="last_name"
+												placeholder="Enter Last Name"
 											/>
 										</div>
 									</div>
@@ -43,7 +56,12 @@ export const UserSignUp = () => {
 											E-Mail
 										</label>
 										<div className="col-md-6">
-											<input type="text" id="email" className="form-control" name="email" />
+											<input
+												onChange={e => setEmail(e.target.value)}
+												type="text"
+												className="form-control"
+												placeholder="Enter Email"
+											/>
 										</div>
 									</div>
 									<div className="form-group row">
@@ -51,7 +69,12 @@ export const UserSignUp = () => {
 											Password
 										</label>
 										<div className="col-md-6">
-											<input type="text" id="password" className="form-control" name="password" />
+											<input
+												onChange={e => setPassword(e.target.value)}
+												type="text"
+												className="form-control"
+												placeholder="Enter Password"
+											/>
 										</div>
 									</div>
 									<div className="form-group row">
@@ -59,7 +82,12 @@ export const UserSignUp = () => {
 											Phone
 										</label>
 										<div className="col-md-6">
-											<input type="text" id="phone" className="form-control" name="phone" />
+											<input
+												onChange={e => setPhone(e.target.value)}
+												type="text"
+												className="form-control"
+												placeholder="Enter Phone"
+											/>
 										</div>
 									</div>
 									<div className="form-group row">
@@ -68,15 +96,26 @@ export const UserSignUp = () => {
 										</label>
 										<div className="col-md-6">
 											<input
-												type="text"
-												id="share_phone"
+												onChange={e => setSharePhone(e.target.value)}
 												className="form-control"
-												name="share_phone"
+												placeholder="Enter Phone"
 											/>
 										</div>
 									</div>
 									<div className="col-md-6 offset-md-4">
-										<button type="submit" className="btn btn-primary">
+										<button
+											onClick={() =>
+												actions.addUser(
+													email,
+													first_name,
+													last_name,
+													password,
+													phone,
+													share_phone
+												)
+											}
+											type="button"
+											className="btn btn-primary form-control">
 											Submit
 										</button>
 									</div>
