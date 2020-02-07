@@ -7,7 +7,7 @@ export const HeroSignIn = () => {
 		<div>
 			<div className="login-form">
 				<form>
-					<h2 className="text-center">Sign In </h2>
+					<h2 className="text-center">Hero - Sign In</h2>
 					<div className="form-group">
 						<div className="input-group">
 							<div className="input-group-prepend">
@@ -53,7 +53,7 @@ export const HeroSignIn = () => {
 				</form>
 				<p>
 					Dont have an account!
-					<Link to="/herosignup">Sign up here.</Link>
+					<Link to="/herosignup"> Sign up here.</Link>
 				</p>
 			</div>
 		</div>

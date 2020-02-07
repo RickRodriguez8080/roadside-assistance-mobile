@@ -8,7 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			//test
 			loadUsers() {
-				let url = "https://3000-a42ea97b-6a3b-446f-9ace-fe6c205aaac3.ws-us02.gitpod.io/user";
+				let url = "https://roadside-assistance-api.herokuapp.com/user";
 				fetch(url)
 					.then(response => response.json())
 					.then(results => {
@@ -19,10 +19,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 						});
 					})
 					.catch(e => console.error(e));
-			}, // end loadContacts()
+			}, // end loadUsers()
 
-			addUser(email, first_name, last_name, password, phone, phone_share) {
-				fetch("https://3000-a42ea97b-6a3b-446f-9ace-fe6c205aaac3.ws-us02.gitpod.io/user", {
+			loadHeroes() {
+				let url = "https://roadside-assistance-api.herokuapp.com/hero";
+				fetch(url)
+					.then(response => response.json())
+					.then(results => {
+						// test to see that the contacts were fetched successfully
+						console.log("**loadHeros**", results);
+						setStore({
+							output: results
+						});
+					})
+					.catch(e => console.error(e));
+			}, // end loadHeros()
+
+			// adding users and heroes
+			addUser(email, first_name, last_name, password, phone, share_phone) {
+				fetch("https://roadside-assistance-api.herokuapp.com/user", {
 					method: "POST", // or 'PUT'
 					headers: {
 						"Content-Type": "application/json"
@@ -33,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						last_name: last_name,
 						password: password,
 						phone: phone,
-						share_phone: phone_share
+						share_phone: share_phone
 					}) // data can be `string` or {object}!
 				})
 					.then(res => {
@@ -42,13 +57,43 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 						return res.json();
 					})
-					.then(response => console.log("addContact Success:", JSON.stringify(response)))
+					//.then(response => console.log("addContact Success:", JSON.stringify(response)))
 					.catch(error => console.error("Error:", error))
 
 					.then(() => {
 						getActions().loadUsers();
 					});
-			} // end addUser
+			}, // end addUser
+
+			addHero(email, first_name, last_name, password, zipcode, phone, share_phone) {
+				fetch("https://roadside-assistance-api.herokuapp.com/hero", {
+					method: "POST", // or 'PUT'
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: email,
+						first_name: first_name,
+						last_name: last_name,
+						password: password,
+						zip_code: zipcode,
+						phone: phone,
+						share_phone: share_phone
+					}) // data can be `string` or {object}!
+				})
+					.then(res => {
+						if (!res.ok) {
+							throw new Error("Error");
+						}
+						return res.json();
+					})
+					//.then(response => console.log("addContact Success:", JSON.stringify(response)))
+					.catch(error => console.error("Error:", error))
+
+					.then(() => {
+						getActions().loadHeroes();
+					});
+			} // end addHero
 		} // end actions
 	}; // end return
 }; // end getState()

@@ -32,6 +32,7 @@ const injectContext = PassedComponent => {
 			 *
 			 **/
 			state.actions.loadUsers();
+			state.actions.loadHeroes();
 			//state.actions.loadHeroes();
 			//state.actions.loadIncidents();
 		}, []);
