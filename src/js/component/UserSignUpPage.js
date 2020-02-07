@@ -20,7 +20,7 @@ export const UserSignUp = () => {
 					<div className="col-md-8">
 						<div className="card">
 							<div className="card-header text-center">
-								<h2>Create Account</h2>
+								<h2>User Account Sign Up</h2>
 							</div>
 							<div className="card-body">
 								<form>
