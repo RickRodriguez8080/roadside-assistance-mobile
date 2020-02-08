@@ -7,7 +7,7 @@ import { AngelSignIn } from "./views/angelSignIn";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import Navbar from "./component/navbar";
 import { HeroSignIn } from "./component/HeroSignInPage";
 import { HeroSignUp } from "./component/HeroSignUpPage";
 import { UserSignIn } from "./component/UserSignInPage";
@@ -26,7 +26,7 @@ export const Layout = () => {
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter>
 				<ScrollToTop>
-					<Navbar />
+					{/* <Navbar /> */}
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/herosignin" component={HeroSignIn} />

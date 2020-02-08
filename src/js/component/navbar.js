@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../img/rigo-baby.jpg";
+import "./navbar.css";
 
-export const Navbar = () => {
+const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Company Logo</span>
+				<img src={logo} />
+				{/* <span className="navbar-brand mb-0 h1">Company Logo</span> */}
 			</Link>
 			<div>
 				<div className="ml-auto">
@@ -22,3 +25,4 @@ export const Navbar = () => {
 		</nav>
 	);
 };
+export default Navbar;
