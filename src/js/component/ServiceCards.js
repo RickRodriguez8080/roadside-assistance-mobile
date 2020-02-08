@@ -1,7 +1,7 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 
-export const ServiceCards = () => {
+export const ServiceCards = props => {
 	return (
 		<div className="card-deck">
 			<div className="card card-gas bg-danger">
@@ -39,6 +39,7 @@ export const ServiceCards = () => {
 					<div className="card-body">
 						<h4 className="card-title text-white">Battery</h4>
 					</div>
+					{/* {console.log(service)} */}
 				</a>
 			</div>
 		</div>
