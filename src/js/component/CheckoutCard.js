@@ -1,23 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 export const CheckoutCard = () => {
 	return (
-        <div class="card text-center">
-            <div class="card-header">
-                    Featured
-            </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Request Service</a>
-                    <a href="#" class="btn btn-primary">Back</a>
-                </div>
-            <div class="card-footer text-muted">
-                2 days ago
-            </div>
-        </div>
-    	);
-};
+		<div className="card text-center">
+			<div className="card-header">Please confirm your service need</div>
+			<div className="card-body">
+				<h1 className="card-title mx-auto">Gas</h1>
+				<p className="card-text"> 2 Gallon 8 Oz</p>
+				<Link to="/status">
+					<span className="btn btn-primary btn-lg" href="#" role="button">
+						Get Service
+					</span>
+				</Link>
 
+				<Link to="/">
+					<span className="btn btn-primary btn-lg" href="#" role="button">
+						Back
+					</span>
+				</Link>
+			</div>
+			<div className="card-footer text-muted">6:45am</div>
+		</div>
+	);
+};

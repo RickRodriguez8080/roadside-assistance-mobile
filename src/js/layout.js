@@ -12,6 +12,7 @@ import { HeroSignIn } from "./component/HeroSignInPage";
 import { HeroSignUp } from "./component/HeroSignUpPage";
 import { UserSignIn } from "./component/UserSignInPage";
 import { UserSignUp } from "./component/UserSignUpPage";
+import { CheckoutCard } from "./component/CheckoutCard";
 
 //import { Footer } from "./component/footer";
 
@@ -33,6 +34,7 @@ export const Layout = () => {
 						<Route path="/usersignin" component={UserSignIn} />
 						<Route path="/usersignup" component={UserSignUp} />
 						<Route path="/single/:theid" component={Single} />
+						<Route path="/checkout" component={CheckoutCard} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					{/*Original position of footer*/}
