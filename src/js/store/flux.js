@@ -3,8 +3,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			user: [],
 			hero: [],
-			servicename: " ",
-			email: "karthik@gmail.com"
+			servicename: "",
+			useremail: "",
+			usertoken: ""
 		},
 		actions: {
 			//test
@@ -96,18 +97,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			}, // end addHero
 
+			userLogIn: loginobj => {
+				setStore({ useremail: loginobj.email });
+				fetch("https://roadside-assistance-api.herokuapp.com/user/login", {
+					method: "POST",
+					body: JSON.stringify(loginobj),
+					headers: {
+						"Content-type": "application/json"
+					}
+				})
+					.then(resp => {
+						return resp.json();
+					})
+					.then(obj => {
+						setStore({ usertoken: obj.key });
+					});
+			}, //end userLogIn
+
 			updateServiceType: servicetype => {
 				setStore({ servicename: servicetype });
 			}, //end updateServiceType
 
-			createIncident: (lati, longi, servicename) => {
+			createIncident: (lati, longi, servicename, useremail) => {
 				fetch("https://roadside-assistance-api.herokuapp.com/incident", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
-						email: "karthik@gmail.com",
+						email: useremail,
 						servicetype_name: servicename,
 						latitude: lati,
 						longitude: longi
@@ -117,9 +135,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 			}, //end createIncident
 
-			logOutChange: () => {
-				setStore({ email: "" });
-			}
+			logOut: () => {
+				setStore({ useremail: "", usertoken: "" });
+			} //end logOut
 		} // end actions
 	}; // end return
 }; // end getState()

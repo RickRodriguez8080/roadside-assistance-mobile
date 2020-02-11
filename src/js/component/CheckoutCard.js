@@ -29,11 +29,16 @@ export const CheckoutCard = () => {
 					type="button"
 					className="btn btn-success btn-lg"
 					onClick={() => {
-						actions.createIncident(Latitude.toString(), Longitude.toString(), store.servicename);
+						actions.createIncident(
+							Latitude.toString(),
+							Longitude.toString(),
+							store.servicename,
+							store.useremail
+						);
 					}}>
 					Get Service
 				</button>
-				<Link to="/requestpage">
+				<Link to="/">
 					<button type="button" className="btn btn-primary btn-lg">
 						Go Back
 					</button>

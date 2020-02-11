@@ -9,7 +9,7 @@ export const HeroSignUp = () => {
 	const [password, setPassword] = useState("");
 	const [zipcode, setZipCode] = useState("");
 	const [phone, setPhone] = useState("");
-	const [share_phone, setSharePhone] = useState();
+	const [share_phone, setSharePhone] = useState(false);
 
 	// allows you to access store and action from flux.js
 	const { store, actions } = useContext(Context);
@@ -110,7 +110,7 @@ export const HeroSignUp = () => {
 										</label>
 										<div className="col-md-6">
 											<input
-												onChange={e => setSharePhone(e.target.value)}
+												onChange={e => setSharePhone(true)}
 												className="form-control"
 												placeholder="Enter Phone"
 											/>

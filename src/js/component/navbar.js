@@ -13,7 +13,7 @@ const Navbar = () => {
 				{/* <span className="navbar-brand mb-0 h1">Company Logo</span> */}
 			</Link>
 
-			{store.email == "" && (
+			{store.useremail == "" && (
 				<div className="navbar-nav ml-auto">
 					<Link to="/herosignin">
 						<button className="btn btn-primary">Hero Sign-In</button>
@@ -23,10 +23,10 @@ const Navbar = () => {
 					</Link>
 				</div>
 			)}
-			{store.email != "" && (
+			{store.useremail != "" && (
 				<div className="navbar-nav ml-auto">
 					<Link to="/">
-						<button className="btn btn-primary" onClick={actions.logOutChange}>
+						<button className="btn btn-primary" onClick={actions.logOut}>
 							Log Out
 						</button>
 					</Link>
