@@ -13,6 +13,7 @@ import { HeroSignUp } from "./component/HeroSignUpPage";
 import { UserSignIn } from "./component/UserSignInPage";
 import { UserSignUp } from "./component/UserSignUpPage";
 import { CheckoutCard } from "./component/CheckoutCard";
+import { Request } from "./component/RequestPage";
 
 //import { Footer } from "./component/footer";
 
@@ -26,7 +27,7 @@ export const Layout = () => {
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter>
 				<ScrollToTop>
-					{/* <Navbar /> */}
+					<Navbar />
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/herosignin" component={HeroSignIn} />
@@ -35,6 +36,7 @@ export const Layout = () => {
 						<Route path="/usersignup" component={UserSignUp} />
 						<Route path="/single/:theid" component={Single} />
 						<Route path="/checkout" component={CheckoutCard} />
+						<Route path="/requestpage" component={Request} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					{/*Original position of footer*/}
