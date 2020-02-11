@@ -7,7 +7,6 @@ import Navbar from "../component/navbar";
 
 export const Home = () => (
 	<div>
-		<Navbar />
 		<div className="text-center mt-5">
 			<MainSelectionJumbotron />
 			<ServiceCards />

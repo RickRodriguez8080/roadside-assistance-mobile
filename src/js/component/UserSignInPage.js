@@ -41,9 +41,11 @@ export const UserSignIn = () => {
 						</div>
 					</div>
 					<div className="form-group">
-						<button type="submit" className="btn btn-primary btn-block">
-							Log in
-						</button>
+						<Link to="/requestpage">
+							<button type="submit" className="btn btn-primary btn-block">
+								Log in
+							</button>
+						</Link>
 					</div>
 					<div className="clearfix">
 						<label className="pull-left checkbox-inline">

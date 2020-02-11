@@ -3,7 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			user: [],
 			hero: [],
-			incident: []
+			servicename: " ",
+			email: "karthik@gmail.com"
 		},
 		actions: {
 			//test
@@ -93,7 +94,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(() => {
 						getActions().loadHeroes();
 					});
-			} // end addHero
+			}, // end addHero
+
+			updateServiceType: servicetype => {
+				setStore({ servicename: servicetype });
+			}, //end updateServiceType
+
+			createIncident: (lati, longi, servicename) => {
+				fetch("https://roadside-assistance-api.herokuapp.com/incident", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						email: "karthik@gmail.com",
+						servicetype_name: servicename,
+						latitude: lati,
+						longitude: longi
+					})
+				}).then(data => {
+					console.log("Success:", data);
+				});
+			}, //end createIncident
+
+			logOutChange: () => {
+				setStore({ email: "" });
+			}
 		} // end actions
 	}; // end return
 }; // end getState()
