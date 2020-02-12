@@ -6,7 +6,10 @@ export const MainSelectionJumbotron = () => {
 	return (
 		<div className="jumbotron">
 			{/*<img className="incident-image" src={Jumboimg} alt="Incident image" />*/}
-			<h3 className="display-3">Stranded and Feeling Helpless?</h3>
+			<div>
+				<h2 className="display-2">Stranded? </h2>
+				<h3 className="answer">Real heroes are always nearby</h3>
+			</div>
 			{/*<p className="lead">Please choose the service you need</p>
 			<hr className="my-2" />*/}
 		</div>

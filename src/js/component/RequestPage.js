@@ -17,7 +17,7 @@ export const Request = () => {
 						setState(true);
 					}
 				}}>
-				Gas
+				Emergency Gas
 			</button>
 			<button
 				type="button"
@@ -28,7 +28,7 @@ export const Request = () => {
 						setState(true);
 					}
 				}}>
-				Flat Tire
+				Spare Tire Change
 			</button>
 			<button
 				type="button"
@@ -37,7 +37,7 @@ export const Request = () => {
 					actions.updateServiceType("battery");
 					setState(true);
 				}}>
-				Battery
+				Jumpstart
 			</button>
 			{state && <CheckoutCard />}
 		</div>
