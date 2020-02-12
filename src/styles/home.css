@@ -1,5 +1,13 @@
+body {
+    background-color: #D7DADB;
+}
+
 .jumbotron {
-    margin-top: 0;
+    margin: 0, 0, 20px, 0;
+    background-image: url("../img/Jumboimg.png");
+    background-size: cover 50%;
+    border-image-repeat: no-repeat;
+    height: 100%;
 }
 
 .display-3 {
@@ -7,21 +15,13 @@
     font-weight: bold;
 }
 
-/* // img {
-//     width: 25%;
-// }
-
-// .card-title {
-//     width: 25%;
-// }
-
-// .gas-img {
-//     float: left;
-//     width: 25%;
-// } */
 .card-img-top {
     margin-bottom: 0px;
     height: 205px;
     width:auto;
+}
 
+.card-text{
+    padding: 10px;
+    text-align: center;
 }
