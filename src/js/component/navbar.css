@@ -1,4 +1,19 @@
-img{
-    width: auto;
+.navbar {
+    background-color: #2C3E50;
+}
+
+
+.logo {
+    width: 400px;
     height: 100px;
+}
+
+
+.hero-button {
+    margin-right: 10px;
+}
+
+.hero-button, .user-button, .logout-button {
+    background-color: #FC4349;
+    border-radius: 4px;
 }
