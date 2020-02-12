@@ -1,46 +1,43 @@
 import React from "react";
 //import { Link } from "react-router-dom";
+import Alert from "../../img/Alert.png";
+import Fast from "../../img/Fast2.png";
+import Save from "../../img/Save.png";
+import "../../styles/home.css";
 
 export const ServiceCards = props => {
 	return (
 		<div className="card-deck">
-			<div className="card card-gas bg-danger">
-				<a href="!#">
-					<div className="card-body">
-						{/*<img
-							className="card-img-top gas-img"
-							//src="file:///workspace/react-hello-webapp/src/img/gas-pump.png"
-							alt="Gas Pump"
-						/>*/}
-						<h4 className="card-title text-white">Gas</h4>
-					</div>
-				</a>
+			<div className="card card-request-help">
+				<div className="card-body">
+					<img className="card-img-top" src={Alert} alt="Send Alert" />
+					<h3 className="card-title text-dark">Request Help</h3>
+					<p className="card-text">
+						This is a wider card with supporting text below as a natural lead-in to additional content. This
+						card has even longer content than the first to show
+					</p>
+				</div>
 			</div>
-			<div className="card card-tire bg-warning">
-				<a href="!#">
-					{/*
-                    <img
-						className="card-img-top"
-						src="file:///workspace/react-hello-webapp/src/img/flat-tire.png"
-						alt="Flat Tire"
-                    />*/}
-					<div className="card-body">
-						<h4 className="card-title text-dark">Flat Tire</h4>
-					</div>
-				</a>
+			<div className="card card-save-time">
+				<div className="card-body">
+					<img className="card-img-top" src={Fast} alt="Save Time" />
+					<h3 className="card-title text-dark">Get Quick Assistance</h3>
+					<p className="card-text">
+						This is a wider card with supporting text below as a natural lead-in to additional content. This
+						card has even longer content than the first to show
+					</p>
+				</div>
 			</div>
-			<div className="card card-battery bg-dark">
-				<a href="!#">
-					{/*<img
-						className="card-img-top"
-						src="file:///workspace/react-hello-webapp/src/img/battery.png"
-						alt="Charge Battery"
-					/>*/}
-					<div className="card-body">
-						<h4 className="card-title text-white">Battery</h4>
-					</div>
-					{/* {console.log(service)} */}
-				</a>
+			<div className="card card-save-money">
+				<div className="card-body">
+					<img className="card-img-top" src={Save} alt="Save Money" />
+					<h3 className="card-title text-dark">Back on the Road (for Less)</h3>
+					<p className="card-text">
+						This is a wider card with supporting text below as a natural lead-in to additional content. This
+						card has even longer content than the first to show
+					</p>
+				</div>
+				{/* {console.log(service)} */}
 			</div>
 		</div>
 	);

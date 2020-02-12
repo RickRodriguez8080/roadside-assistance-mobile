@@ -25,26 +25,36 @@ export const CheckoutCard = () => {
 			<div className="card-header">Please confirm your service need</div>
 			<div className="card-body">
 				<h1 className="card-title mx-auto">{store.servicename}</h1>
-				<button
-					type="button"
-					className="btn btn-success btn-lg"
-					onClick={() => {
-						actions.createIncident(
-							Latitude.toString(),
-							Longitude.toString(),
-							store.servicename,
-							store.useremail
-						);
-					}}>
-					Get Service
-				</button>
+				<span className="getservicespace">
+					<button
+						type="button"
+						className="btn btn-primary btn-lg"
+						onClick={() => {
+							actions.createIncident(
+								Latitude.toString(),
+								Longitude.toString(),
+								store.servicename,
+								store.useremail,
+								store.usertoken
+							);
+						}}>
+						Get Service
+					</button>
+				</span>
 				<Link to="/">
 					<button type="button" className="btn btn-primary btn-lg">
 						Go Back
 					</button>
 				</Link>
 			</div>
-			<div className="card-footer text-muted">you will get the response as soon as possible!!</div>
+			{store.incidentstatus == 200 && (
+				<div className="alert alert-success">Success!!! You will get the response as soon as possible..</div>
+			)}
+			{store.incidentstatus == "" && <div className="card-footer text-muted" />}
+			{store.incidentstatus != 200 &&
+				store.incidentstatus != "" && (
+					<div className="card-footer text-muted">Sorry!!! System is down,can you try again</div>
+				)}
 		</div>
 	);
 };

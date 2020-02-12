@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			hero: [],
 			servicename: "",
 			useremail: "",
-			usertoken: ""
+			usertoken: "",
+			incidentstatus: ""
 		},
 		actions: {
 			//test
@@ -118,11 +119,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ servicename: servicetype });
 			}, //end updateServiceType
 
-			createIncident: (lati, longi, servicename, useremail) => {
+			createIncident: (lati, longi, servicename, useremail, usertoken) => {
 				fetch("https://roadside-assistance-api.herokuapp.com/incident", {
 					method: "POST",
 					headers: {
-						"Content-Type": "application/json"
+						"Content-Type": "application/json",
+						Authorization: "Bearer " + usertoken
 					},
 					body: JSON.stringify({
 						email: useremail,
@@ -130,8 +132,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 						latitude: lati,
 						longitude: longi
 					})
-				}).then(data => {
-					console.log("Success:", data);
+				}).then(resp => {
+					const success = resp.status;
+					setStore({ incidentstatus: success });
 				});
 			}, //end createIncident
 

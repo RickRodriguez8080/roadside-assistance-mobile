@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import logo from "../../img/rigo-baby.jpg";
+import logo from "../../img/popresq_logo.png";
 import "./navbar.css";
 
 const Navbar = () => {
@@ -9,24 +9,24 @@ const Navbar = () => {
 	return (
 		<nav className="navbar navbar-expand-md">
 			<Link to="/">
-				<img src={logo} />
+				<img className="logo" src={logo} />
 				{/* <span className="navbar-brand mb-0 h1">Company Logo</span> */}
 			</Link>
 
 			{store.useremail == "" && (
-				<div className="navbar-nav ml-auto">
+				<div className="navbar-nav ml-auto pr-2">
 					<Link to="/herosignin">
-						<button className="btn btn-primary">Hero Sign-In</button>
+						<button className="btn btn-primary hero-button">Hero Sign-In</button>
 					</Link>
 					<Link to="/usersignin">
-						<button className="btn btn-primary">User Sign-In</button>
+						<button className="btn btn-primary user-button">User Sign-In</button>
 					</Link>
 				</div>
 			)}
 			{store.useremail != "" && (
-				<div className="navbar-nav ml-auto">
+				<div className="navbar-nav ml-auto pr-2">
 					<Link to="/">
-						<button className="btn btn-primary" onClick={actions.logOut}>
+						<button className="btn btn-primary logout-button" onClick={actions.logOut}>
 							Log Out
 						</button>
 					</Link>
