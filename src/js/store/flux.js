@@ -139,7 +139,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			}, //end createIncident
 
 			logOut: () => {
-				setStore({ useremail: "", usertoken: "" });
+				setStore({ useremail: "", usertoken: "", servicename: "", usertoken: "" });
 			} //end logOut
 		} // end actions
 	}; // end return
