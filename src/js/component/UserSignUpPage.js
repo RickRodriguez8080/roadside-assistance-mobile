@@ -8,7 +8,7 @@ export const UserSignUp = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [phone, setPhone] = useState("");
-	const [share_phone, setSharePhone] = useState();
+	const [share_phone, setSharePhone] = useState(false);
 
 	// allows you to access store and action from flux.js
 	const { store, actions } = useContext(Context);
@@ -96,28 +96,30 @@ export const UserSignUp = () => {
 										</label>
 										<div className="col-md-6">
 											<input
-												onChange={e => setSharePhone(e.target.value)}
+												onChange={e => setSharePhone(true)}
 												className="form-control"
 												placeholder="Enter Phone"
 											/>
 										</div>
 									</div>
 									<div className="col-md-6 offset-md-4">
-										<button
-											onClick={() =>
-												actions.addUser(
-													email,
-													first_name,
-													last_name,
-													password,
-													phone,
-													share_phone
-												)
-											}
-											type="button"
-											className="btn btn-primary form-control">
-											Submit
-										</button>
+										<Link to="/usersignin">
+											<button
+												onClick={() =>
+													actions.addUser(
+														email,
+														first_name,
+														last_name,
+														password,
+														phone,
+														share_phone
+													)
+												}
+												type="button"
+												className="btn btn-primary form-control">
+												Submit
+											</button>
+										</Link>
 									</div>
 								</form>
 							</div>

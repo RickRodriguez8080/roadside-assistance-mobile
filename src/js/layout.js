@@ -14,6 +14,7 @@ import { UserSignIn } from "./component/UserSignInPage";
 import { UserSignUp } from "./component/UserSignUpPage";
 import { CheckoutCard } from "./component/CheckoutCard";
 import { Request } from "./component/RequestPage";
+import { LogInRedirect } from "./component/LogInRedirectpage";
 
 //import { Footer } from "./component/footer";
 
@@ -37,6 +38,7 @@ export const Layout = () => {
 						<Route path="/single/:theid" component={Single} />
 						<Route path="/checkout" component={CheckoutCard} />
 						<Route path="/requestpage" component={Request} />
+						<Route path="/loginredirect" component={LogInRedirect} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					{/*Original position of footer*/}

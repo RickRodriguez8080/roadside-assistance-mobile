@@ -7,13 +7,13 @@ import "./navbar.css";
 const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<nav className="navbar navbar-expand-md navbar-collapse">
+		<nav className="navbar navbar-expand-md">
 			<Link to="/">
 				<img className="logo" src={logo} />
 				{/* <span className="navbar-brand mb-0 h1">Company Logo</span> */}
 			</Link>
 
-			{store.email == "" && (
+			{store.useremail == "" && (
 				<div className="navbar-nav ml-auto pr-2">
 					<Link to="/herosignin">
 						<button className="btn btn-primary hero-button">Hero Sign-In</button>
@@ -23,10 +23,10 @@ const Navbar = () => {
 					</Link>
 				</div>
 			)}
-			{store.email != "" && (
+			{store.useremail != "" && (
 				<div className="navbar-nav ml-auto pr-2">
 					<Link to="/">
-						<button className="btn btn-primary logout-button" onClick={actions.logOutChange}>
+						<button className="btn btn-primary logout-button" onClick={actions.logOut}>
 							Log Out
 						</button>
 					</Link>
