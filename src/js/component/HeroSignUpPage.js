@@ -117,22 +117,24 @@ export const HeroSignUp = () => {
 										</div>
 									</div>
 									<div className="col-md-6 offset-md-4">
-										<button
-											onClick={() =>
-												actions.addHero(
-													email,
-													first_name,
-													last_name,
-													password,
-													zipcode,
-													phone,
-													share_phone
-												)
-											}
-											type="button"
-											className="btn btn-primary form-control">
-											Submit
-										</button>
+										<Link to="/thanksforhero">
+											<button
+												onClick={() =>
+													actions.addHero(
+														email,
+														first_name,
+														last_name,
+														password,
+														zipcode,
+														phone,
+														share_phone
+													)
+												}
+												type="button"
+												className="btn btn-primary form-control">
+												Submit
+											</button>
+										</Link>
 									</div>
 								</form>
 							</div>

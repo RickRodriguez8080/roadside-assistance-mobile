@@ -49,7 +49,7 @@ export const UserSignIn = props => {
 								</span>
 							</div>
 							<input
-								type="text"
+								type="password"
 								className="form-control"
 								placeholder="password"
 								required="required"
