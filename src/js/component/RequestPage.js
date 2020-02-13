@@ -19,7 +19,7 @@ export const Request = () => {
 							setState(true);
 						}
 					}}>
-					Gas
+					<h4>Gas</h4>
 				</button>
 			</span>
 			<span className="buttonspace">
@@ -32,7 +32,7 @@ export const Request = () => {
 							setState(true);
 						}
 					}}>
-					Flat Tire
+					<h4>Flat Tire</h4>
 				</button>
 			</span>
 			<span className="buttonspace">
@@ -43,7 +43,7 @@ export const Request = () => {
 						actions.updateServiceType("battery");
 						setState(true);
 					}}>
-					Battery
+					<h4>Battery</h4>
 				</button>
 			</span>
 			<div className="checkoutspace">{state && <CheckoutCard />}</div>
